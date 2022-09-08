@@ -1,7 +1,7 @@
 import pyshark
 import csv
 import pandas as pd
-
+import os
 
 
 def read_pcap_file(file_name):
@@ -16,10 +16,9 @@ def create_csv_file(file_name, headers):
 
 
 def main():
-    pcap_file = read_pcap_file(r'C:\Users\hunte\PycharmProjects\pcapProject\pcap_file.pcap')
-
+    pcap_file = read_pcap_file(f'{os.getcwd()}/pcap_file.pcap')
     headers = ['protocol', 'src_ip', 'src_port', 'dst_ip', 'dst_port', 'tcp_flag']
-    csv_filename = 'csv_file'
+    csv_filename = 'csv_file.csv'
     file, writer = create_csv_file(csv_filename, headers)
     count = 0
 
