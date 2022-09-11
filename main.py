@@ -70,9 +70,9 @@ def main():
 
     df = pd.read_csv(csv_filename)
     print("the number of unique values ip: " + str(len(df.dst_ip.unique())))
-    print(df['src_port'].max())
-    print(df['src_port'].min())
-    print(df['tcp_flag'].where(df['tcp_flag'] == 2).count())
+    print('the largest port number:', df['src_port'].max())
+    print('the smallest port number:', df['src_port'].min())
+    print('the number of tcp_flags:', df['tcp_flag'].where(df['tcp_flag'] == 2).count())
 
 
 if __name__ == "__main__":
