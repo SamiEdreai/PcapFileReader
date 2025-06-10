@@ -58,7 +58,6 @@ def main():
                 write_row(writer, "TCP", tcp_packet.underlayer.src, tcp_packet.sport, tcp_packet.underlayer.dst,
                           tcp_packet.dport, flag)
             if UDP in packet:
-                flag = extract_flag(packet.flags)
                 udp_packet = packet[UDP]
                 write_row(writer, "UDP", udp_packet.underlayer.src, udp_packet.sport, udp_packet.underlayer.dst,
                           udp_packet.dport, flag)
